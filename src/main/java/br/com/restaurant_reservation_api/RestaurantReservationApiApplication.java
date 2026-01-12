@@ -1,13 +1,13 @@
-package br.com.restaurant_reservation;
+package br.com.restaurant_reservation_api;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class RestaurantReservationApplication {
+public class RestaurantReservationApiApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(RestaurantReservationApplication.class, args);
+		SpringApplication.run(RestaurantReservationApiApplication.class, args);
 	}
 
 }

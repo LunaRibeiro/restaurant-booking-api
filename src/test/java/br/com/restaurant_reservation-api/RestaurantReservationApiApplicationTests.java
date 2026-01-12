@@ -1,10 +1,10 @@
-package br.com.restaurant_reservation;
+package br.com.restaurant_reservation_api;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class RestaurantReservationApplicationTests {
+class RestaurantReservationApiApplicationTests {
 
 	@Test
 	void contextLoads() {

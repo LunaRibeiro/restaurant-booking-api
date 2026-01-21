@@ -7,8 +7,8 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
-
-import java.util.Date;
+import java.time.LocalDateTime;
+import org.hibernate.annotations.CreationTimestamp;
 
 @Entity
 @Getter
@@ -35,6 +35,7 @@ public class Users {
     private Role role;
 
     @JsonFormat(pattern = "yyyy-MM-dd")
-    private Date createdAt;
+    @CreationTimestamp
+    private LocalDateTime createdAt;
 
 }

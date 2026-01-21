@@ -13,8 +13,8 @@ public class UsersDTOMapper {
                 users.getId(),
                 users.getName(),
                 users.getEmail(),
-                users.getPassword(),
-                users.getRole()
+                users.getRole(),
+                users.getCreatedAt()
         );
     }
 }

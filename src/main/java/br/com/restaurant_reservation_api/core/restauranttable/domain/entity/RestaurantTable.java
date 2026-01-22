@@ -1,11 +1,15 @@
 package br.com.restaurant_reservation_api.core.restauranttable.domain.entity;
 
 import br.com.restaurant_reservation_api.core.status.Status;
+import com.fasterxml.jackson.annotation.JsonFormat;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import org.hibernate.annotations.CreationTimestamp;
+
+import java.time.LocalDateTime;
 
 @Entity
 @Getter
@@ -26,5 +30,9 @@ public class RestaurantTable {
 
     @Enumerated(EnumType.STRING)
     private Status status;
+
+    @JsonFormat(pattern = "yyyy-MM-dd")
+    @CreationTimestamp
+    private LocalDateTime createdAt;
 
 }

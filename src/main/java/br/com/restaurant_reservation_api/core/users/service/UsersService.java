@@ -12,6 +12,7 @@ import br.com.restaurant_reservation_api.core.users.mapper.UsersDTOMapper;
 import br.com.restaurant_reservation_api.core.users.mapper.UsersUpdateMapper;
 import br.com.restaurant_reservation_api.core.users.repository.UsersRepository;
 import br.com.restaurant_reservation_api.core.users.specification.UsersSpecification;
+import jakarta.persistence.EntityNotFoundException;
 import lombok.AllArgsConstructor;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
@@ -76,5 +77,11 @@ public class UsersService {
 
     public List<UsersDTO> generateUsersDTOList(List<Users> usersList){
         return usersList.stream().map(usersDTOMapper::convert).toList();
+    }
+
+    public Users getOrThrowException(Long id) {
+        return usersRepository.findById(id).orElseThrow(
+                () -> new EntityNotFoundException("Users")
+        );
     }
 }

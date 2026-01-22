@@ -1,9 +1,9 @@
-package br.com.restaurant_reservation_api.core.restauranttable.domain.dto.response;
+package br.com.restaurant_reservation_api.core.restauranttables.domain.dto.response;
 
 import br.com.restaurant_reservation_api.core.status.Status;
 import java.time.LocalDateTime;
 
-public record RestaurantTableDTO(
+public record RestaurantTablesDTO(
         Long id,
         Integer tableNumber,
         Integer capacity,

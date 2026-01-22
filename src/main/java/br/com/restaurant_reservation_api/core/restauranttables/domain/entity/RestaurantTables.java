@@ -1,4 +1,4 @@
-package br.com.restaurant_reservation_api.core.restauranttable.domain.entity;
+package br.com.restaurant_reservation_api.core.restauranttables.domain.entity;
 
 import br.com.restaurant_reservation_api.core.status.Status;
 import com.fasterxml.jackson.annotation.JsonFormat;
@@ -16,7 +16,7 @@ import java.time.LocalDateTime;
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-public class RestaurantTable {
+public class RestaurantTables {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

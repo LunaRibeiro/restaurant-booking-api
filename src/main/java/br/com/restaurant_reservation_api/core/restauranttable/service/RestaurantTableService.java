@@ -6,7 +6,7 @@ import br.com.restaurant_reservation_api.core.restauranttable.domain.dto.request
 import br.com.restaurant_reservation_api.core.restauranttable.domain.dto.request.RestaurantTableFormDTO;
 import br.com.restaurant_reservation_api.core.restauranttable.domain.dto.response.RestaurantTableDTO;
 import br.com.restaurant_reservation_api.core.restauranttable.domain.entity.RestaurantTable;
-import br.com.restaurant_reservation_api.core.restauranttable.entity.RestaurantTableRepository;
+import br.com.restaurant_reservation_api.core.restauranttable.repository.RestaurantTableRepository;
 import br.com.restaurant_reservation_api.core.restauranttable.mapper.RestaurantTableCreateMapper;
 import br.com.restaurant_reservation_api.core.restauranttable.mapper.RestaurantTableDTOMapper;
 import br.com.restaurant_reservation_api.core.restauranttable.mapper.RestaurantTableUpdateMapper;

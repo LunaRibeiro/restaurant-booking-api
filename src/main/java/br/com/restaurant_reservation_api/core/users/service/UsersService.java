@@ -70,7 +70,7 @@ public class UsersService {
                 .and(roleSpecification);
     }
 
-    public Page<UsersDTO> generateUsersDTOPage(Page<Users> usersPage, Pageable pageable){
+    public Page<UsersDTO> generateUsersDTOPage(Page<Users> usersPage){
         return usersPage.map(this::generateUsersDTO);
     }
 

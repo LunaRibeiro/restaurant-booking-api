@@ -62,4 +62,23 @@ public class UsersController {
 
         return ResponseEntity.created(uri).body(usersDTO);
     }
+
+    @PutMapping("/{id}")
+    public ResponseEntity<Void> update(@PathVariable Long id,  @RequestBody @Valid UsersFormDTO usersFormDTO) {
+        Users users = usersService.getOrThrowException(id);
+
+        usersService.update(users, usersFormDTO);
+        usersService.save(users);
+
+        return ResponseEntity.noContent().build();
+    }
+
+    @DeleteMapping("/{id}")
+    public ResponseEntity<Void> delete(@PathVariable Long id){
+        Users users = usersService.getOrThrowException(id);
+
+        usersService.delete(users);
+
+        return ResponseEntity.noContent().build();
+    }
 }

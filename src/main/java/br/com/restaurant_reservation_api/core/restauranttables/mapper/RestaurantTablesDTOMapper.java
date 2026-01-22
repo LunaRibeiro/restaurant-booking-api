@@ -13,7 +13,7 @@ public class RestaurantTablesDTOMapper {
                 restaurantTables.getId(),
                 restaurantTables.getTableNumber(),
                 restaurantTables.getCapacity(),
-                restaurantTables.getStatus(),
+                restaurantTables.getStatusTables(),
                 restaurantTables.getCreatedAt()
         );
     }

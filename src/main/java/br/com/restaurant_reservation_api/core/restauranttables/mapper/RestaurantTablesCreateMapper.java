@@ -14,7 +14,7 @@ public class RestaurantTablesCreateMapper {
 
         restaurantTables.setTableNumber(restaurantTablesFormDTO.tableNumber());
         restaurantTables.setCapacity(restaurantTablesFormDTO.capacity());
-        restaurantTables.setStatus(restaurantTablesFormDTO.status());
+        restaurantTables.setStatusTables(restaurantTablesFormDTO.statusTables());
 
         return restaurantTables;
     }

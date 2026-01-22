@@ -8,7 +8,7 @@ import org.springframework.stereotype.Service;
 public class RestaurantTablesUpdateMapper {
 
     public void update(RestaurantTables restaurantTables, RestaurantTablesFormDTO restaurantTablesFormDTO) {
-        restaurantTables.setStatus(restaurantTablesFormDTO.status());
+        restaurantTables.setStatusTables(restaurantTablesFormDTO.statusTables());
         restaurantTables.setTableNumber(restaurantTablesFormDTO.tableNumber());
         restaurantTables.setCapacity(restaurantTablesFormDTO.capacity());
     }

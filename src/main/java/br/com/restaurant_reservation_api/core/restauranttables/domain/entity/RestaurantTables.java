@@ -1,6 +1,6 @@
 package br.com.restaurant_reservation_api.core.restauranttables.domain.entity;
 
-import br.com.restaurant_reservation_api.core.status.Status;
+import br.com.restaurant_reservation_api.core.statustables.StatusTables;
 import com.fasterxml.jackson.annotation.JsonFormat;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
@@ -29,7 +29,7 @@ public class RestaurantTables {
     private Integer capacity;
 
     @Enumerated(EnumType.STRING)
-    private Status status;
+    private StatusTables statusTables;
 
     @JsonFormat(pattern = "yyyy-MM-dd")
     @CreationTimestamp

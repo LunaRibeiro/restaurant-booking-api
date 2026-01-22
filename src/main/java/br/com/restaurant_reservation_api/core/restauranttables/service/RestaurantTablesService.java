@@ -6,12 +6,12 @@ import br.com.restaurant_reservation_api.core.restauranttables.domain.dto.reques
 import br.com.restaurant_reservation_api.core.restauranttables.domain.dto.request.RestaurantTablesFormDTO;
 import br.com.restaurant_reservation_api.core.restauranttables.domain.dto.response.RestaurantTablesDTO;
 import br.com.restaurant_reservation_api.core.restauranttables.domain.entity.RestaurantTables;
-import br.com.restaurant_reservation_api.core.restauranttables.repository.RestaurantTablesRepository;
 import br.com.restaurant_reservation_api.core.restauranttables.mapper.RestaurantTablesCreateMapper;
 import br.com.restaurant_reservation_api.core.restauranttables.mapper.RestaurantTablesDTOMapper;
 import br.com.restaurant_reservation_api.core.restauranttables.mapper.RestaurantTablesUpdateMapper;
+import br.com.restaurant_reservation_api.core.restauranttables.repository.RestaurantTablesRepository;
 import br.com.restaurant_reservation_api.core.restauranttables.specification.RestaurantTablesSpecification;
-import br.com.restaurant_reservation_api.core.status.Status;
+import br.com.restaurant_reservation_api.core.statustables.StatusTables;
 import jakarta.persistence.EntityNotFoundException;
 import lombok.AllArgsConstructor;
 import org.springframework.data.domain.Page;
@@ -69,15 +69,15 @@ public class RestaurantTablesService {
     private Specification<RestaurantTables> generateSpecification(RestaurantTablesFilterDTO restaurantTablesFilterDTO){
         SearchCriteria<Integer> tableNumberCriteria = SpecificationHelper.generateEqualsCriteria("tableNumber", restaurantTablesFilterDTO.tableNumber());
         SearchCriteria<Integer> capacityCriteria =  SpecificationHelper.generateEqualsCriteria("capacity", restaurantTablesFilterDTO.capacity());
-        SearchCriteria<Status> statusCriteria =  SpecificationHelper.generateEqualsCriteria("status", restaurantTablesFilterDTO.status());
+        SearchCriteria<StatusTables> statusTablesCriteria =  SpecificationHelper.generateEqualsCriteria("statusTables", restaurantTablesFilterDTO.statusTables());
 
         RestaurantTablesSpecification tableNumberSpecification = new RestaurantTablesSpecification(tableNumberCriteria);
         RestaurantTablesSpecification capacitySpecification = new RestaurantTablesSpecification(capacityCriteria);
-        RestaurantTablesSpecification statusSpecification = new RestaurantTablesSpecification(statusCriteria);
+        RestaurantTablesSpecification statusTablesSpecification = new RestaurantTablesSpecification(statusTablesCriteria);
 
         return Specification.where(tableNumberSpecification)
                 .and(capacitySpecification)
-                .and(statusSpecification);
+                .and(statusTablesSpecification);
     }
 
     public Page<RestaurantTablesDTO> generateRestaurantTableDTOPage(Page<RestaurantTables> restaurantTablesPage) {

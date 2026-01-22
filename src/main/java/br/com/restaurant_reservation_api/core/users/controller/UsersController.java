@@ -33,11 +33,11 @@ public class UsersController {
     }
 
     @GetMapping("/all")
-    public ResponseEntity<UsersDTO> list(UsersFilterDTO usersFilterDTO){
+    public ResponseEntity<List<UsersDTO>> list(UsersFilterDTO usersFilterDTO){
         List<Users> usersList = usersService.list(usersFilterDTO);
         List<UsersDTO> usersDTOList = usersService.generateUsersDTOList(usersList);
 
-        return ResponseEntity.ok(usersDTOList.get(0));
+        return ResponseEntity.ok(usersDTOList);
     }
 
     @GetMapping("/{id}")

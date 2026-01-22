@@ -23,7 +23,7 @@ public class RestaurantTableController {
     private final RestaurantTableService restaurantTableService;
 
     @GetMapping
-    public ResponseEntity<Page<RestaurantTable>> listPaged(RestaurantTableFilterDTO restaurantTableFilterDTO, Pageable pageable) {
+    public ResponseEntity<Page<RestaurantTableDTO>> listPaged(RestaurantTableFilterDTO restaurantTableFilterDTO, Pageable pageable) {
         Page<RestaurantTable> restaurantTablePage = restaurantTableService.list(restaurantTableFilterDTO, pageable);
         Page<RestaurantTableDTO> restaurantTableDTOPage = restaurantTableService.generateRestaurantTableDTOPage(restaurantTablePage);
 

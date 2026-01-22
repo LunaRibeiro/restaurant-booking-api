@@ -19,7 +19,7 @@ public class RestaurantTable {
     private Long id;
 
     @Column(nullable = false)
-    private String name;
+    private Integer tableNumber;
 
     @Column(nullable = false)
     private Integer capacity;

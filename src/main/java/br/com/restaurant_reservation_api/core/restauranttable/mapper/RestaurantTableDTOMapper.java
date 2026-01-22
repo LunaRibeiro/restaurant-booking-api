@@ -2,7 +2,9 @@ package br.com.restaurant_reservation_api.core.restauranttable.mapper;
 
 import br.com.restaurant_reservation_api.core.restauranttable.domain.dto.response.RestaurantTableDTO;
 import br.com.restaurant_reservation_api.core.restauranttable.domain.entity.RestaurantTable;
+import org.springframework.stereotype.Service;
 
+@Service
 public class RestaurantTableDTOMapper {
 
     public RestaurantTableDTO convert(RestaurantTable restaurantTable) {

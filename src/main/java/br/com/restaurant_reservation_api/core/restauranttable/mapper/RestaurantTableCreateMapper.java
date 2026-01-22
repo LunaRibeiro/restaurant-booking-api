@@ -3,7 +3,9 @@ package br.com.restaurant_reservation_api.core.restauranttable.mapper;
 import br.com.restaurant_reservation_api.core.restauranttable.domain.dto.request.RestaurantTableFormDTO;
 import br.com.restaurant_reservation_api.core.restauranttable.domain.entity.RestaurantTable;
 import lombok.AllArgsConstructor;
+import org.springframework.stereotype.Service;
 
+@Service
 @AllArgsConstructor
 public class RestaurantTableCreateMapper {
 

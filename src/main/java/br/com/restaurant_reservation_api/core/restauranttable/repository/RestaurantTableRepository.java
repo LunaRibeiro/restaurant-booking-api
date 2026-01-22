@@ -1,4 +1,4 @@
-package br.com.restaurant_reservation_api.core.restauranttable.entity;
+package br.com.restaurant_reservation_api.core.restauranttable.repository;
 
 import br.com.restaurant_reservation_api.core.restauranttable.domain.entity.RestaurantTable;
 import org.springframework.data.jpa.repository.JpaRepository;

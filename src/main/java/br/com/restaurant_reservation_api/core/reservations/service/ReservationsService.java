@@ -88,4 +88,15 @@ public class ReservationsService {
         if (id == null) return null;
         return reservationsRepository.findById(id).orElse(null);
     }
+
+    public ReservationsDTO cancel(Reservations reservations) {
+        if (ReservationStatus.CANCELLED.equals(reservations.getReservationStatus())) {
+            return generateReservationsDTO(reservations);
+        }
+
+        reservations.setReservationStatus(ReservationStatus.CANCELLED);
+        save(reservations);
+
+        return generateReservationsDTO(reservations);
+    }
 }

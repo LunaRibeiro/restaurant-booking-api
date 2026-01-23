@@ -57,7 +57,7 @@ public class RestaurantTablesController {
 
         RestaurantTablesDTO restaurantTablesDTO = restaurantTablesService.generateRestaurantTableDTO(restaurantTables);
 
-        URI uri = HttpUtils.createURI(uriComponentsBuilder, "RestaurantTable", restaurantTables.getId());
+        URI uri = HttpUtils.createURI(uriComponentsBuilder, "RestaurantTables", restaurantTables.getId());
 
         return ResponseEntity.created(uri).body(restaurantTablesDTO);
     }

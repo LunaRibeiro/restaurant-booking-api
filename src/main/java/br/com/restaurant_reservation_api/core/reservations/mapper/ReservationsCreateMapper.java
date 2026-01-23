@@ -1,5 +1,6 @@
 package br.com.restaurant_reservation_api.core.reservations.mapper;
 
+import br.com.restaurant_reservation_api.core.reservationStatus.ReservationStatus;
 import br.com.restaurant_reservation_api.core.reservations.domain.dto.request.ReservationsFormDTO;
 import br.com.restaurant_reservation_api.core.reservations.domain.entity.Reservations;
 import br.com.restaurant_reservation_api.core.restauranttables.domain.entity.RestaurantTables;
@@ -14,6 +15,7 @@ public class ReservationsCreateMapper {
         reservations.setUserId(users);
         reservations.setRestaurantTableId(restaurantTables);
         reservations.setReservationDate(reservationsFormDTO.reservationDate());
+        reservations.setReservationStatus(ReservationStatus.PENDING);
 
         return reservations;
     }

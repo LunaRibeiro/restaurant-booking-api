@@ -94,7 +94,7 @@ public class ReservationsService {
             return generateReservationsDTO(reservations);
         }
 
-        reservations.setReservationStatus(ReservationStatus.CANCELLED);
+        reservations.setReservationStatus(ReservationStatus.ACTIVE);
         save(reservations);
 
         return generateReservationsDTO(reservations);

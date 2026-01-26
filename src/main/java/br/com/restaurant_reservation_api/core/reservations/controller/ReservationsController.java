@@ -63,6 +63,7 @@ public class ReservationsController {
         Users users = usersService.getOrThrowException(reservationsFormDTO.userId());
         RestaurantTables restaurantTables = restaurantTablesService.getOrThrowException(reservationsFormDTO.restaurantTableId());
 
+        reservationsService.validateReservationDate(restaurantTables, reservationsFormDTO.reservationDate());
         Reservations reservations = reservationsService.generateReservations(reservationsFormDTO, users, restaurantTables);
         reservationsService.save(reservations);
 

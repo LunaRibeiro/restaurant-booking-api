@@ -5,13 +5,12 @@ import br.com.restaurant_reservation_api.core.restauranttables.domain.dto.respon
 import br.com.restaurant_reservation_api.core.users.domain.dto.response.UsersDTO;
 
 import java.time.LocalDateTime;
-import java.util.Date;
 
 public record ReservationsDTO(
         Long id,
         UsersDTO userId,
         RestaurantTablesDTO restaurantTableId,
-        Date reservationDate,
+        LocalDateTime reservationDate,
         ReservationStatus reservationStatus,
         LocalDateTime createdAt
 ) {

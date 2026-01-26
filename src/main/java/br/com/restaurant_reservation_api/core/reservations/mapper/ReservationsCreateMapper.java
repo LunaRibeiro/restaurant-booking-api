@@ -12,10 +12,10 @@ public class ReservationsCreateMapper {
 
     public Reservations convert(ReservationsFormDTO reservationsFormDTO, Users users, RestaurantTables restaurantTables) {
         Reservations reservations = new Reservations();
-        reservations.setUserId(users);
-        reservations.setRestaurantTableId(restaurantTables);
+        reservations.setUsers(users);
+        reservations.setRestaurantTables(restaurantTables);
         reservations.setReservationDate(reservationsFormDTO.reservationDate());
-        reservations.setReservationStatus(ReservationStatus.PENDING);
+        reservations.setReservationStatus(ReservationStatus.CONFIRMED);
 
         return reservations;
     }

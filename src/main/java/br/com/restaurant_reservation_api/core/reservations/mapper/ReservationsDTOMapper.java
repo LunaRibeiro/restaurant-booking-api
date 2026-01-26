@@ -17,8 +17,8 @@ public class ReservationsDTOMapper {
     public ReservationsDTO convert(Reservations reservations) {
         return new ReservationsDTO(
                 reservations.getId(),
-                usersDTOMapper.convert(reservations.getUserId()),
-                restaurantTablesDTOMapper.convert(reservations.getRestaurantTableId()),
+                usersDTOMapper.convert(reservations.getUsers()),
+                restaurantTablesDTOMapper.convert(reservations.getRestaurantTables()),
                 reservations.getReservationDate(),
                 reservations.getReservationStatus(),
                 reservations.getCreatedAt()

@@ -3,7 +3,8 @@ package br.com.restaurant_reservation_api.core.reservations.domain.dto.request;
 import br.com.restaurant_reservation_api.core.reservationStatus.ReservationStatus;
 import jakarta.validation.constraints.NotNull;
 
-import java.util.Date;
+import java.time.LocalDateTime;
+
 
 public record ReservationsFormDTO(
 
@@ -14,7 +15,7 @@ public record ReservationsFormDTO(
         Long restaurantTableId,
 
         @NotNull
-        Date reservationDate,
+        LocalDateTime reservationDate,
         ReservationStatus reservationStatus
 ) {
 }

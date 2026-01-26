@@ -20,8 +20,10 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.domain.Specification;
 import org.springframework.stereotype.Service;
 
+import java.time.LocalDateTime;
 import java.util.Date;
 import java.util.List;
+
 
 @Service
 @AllArgsConstructor
@@ -94,9 +96,32 @@ public class ReservationsService {
             return generateReservationsDTO(reservations);
         }
 
-        reservations.setReservationStatus(ReservationStatus.ACTIVE);
+        reservations.setReservationStatus(ReservationStatus.CANCELLED);
         save(reservations);
 
         return generateReservationsDTO(reservations);
     }
+
+    public void validateReservationDate(RestaurantTables restaurantTables, LocalDateTime reservationDate) {
+        if(reservationDate.isBefore(LocalDateTime.now())) {
+            throw new IllegalStateException("A reserva deve ser para uma data futura");
+        }
+
+        int hour = reservationDate.getHour();
+        if (hour < 18 || hour > 23) {
+            throw new IllegalStateException("Reserva fora do horário de funcionamento");
+        }
+
+        boolean alreadyReserved =
+                reservationsRepository.existsByRestaurantTablesAndReservationDateAndReservationStatus(
+                        restaurantTables,
+                        reservationDate,
+                        ReservationStatus.ACTIVE
+                );
+
+        if (alreadyReserved) {
+            throw new IllegalStateException("Mesa já reservada nesse horário");
+        }
+    }
+
 }

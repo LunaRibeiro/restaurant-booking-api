@@ -116,7 +116,7 @@ public class ReservationsService {
                 reservationsRepository.existsByRestaurantTablesAndReservationDateAndReservationStatus(
                         restaurantTables,
                         reservationDate,
-                        ReservationStatus.ACTIVE
+                        ReservationStatus.CONFIRMED
                 );
 
         if (alreadyReserved) {
